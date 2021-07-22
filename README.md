@@ -23,10 +23,12 @@ your vimrc file.
 Usage
 -----
 
-###Open URL:###
+### Open URL:
+
     input :W3m [url or keyword]
 
-###Search Mode:###
+### Search Mode:
+
     input :W3m search-engine-name keyword
 
     [search-engine-name]
@@ -48,54 +50,77 @@ Usage
     yahoodict        : Yahoo dictionary
     local            : Local HTML file
 
-###Open URL At New Tab:###
+### Open URL At New Tab
+
     input :W3mTab [url or keyword]
 
-###Open URL At Split Window:###
+### Open URL At Split Window:
+
     input :W3mSplit [url or keyword]
 
-###Open URL At Vertical Split Window:###
+### Open URL At Vertical Split Window:
+
     input :W3mVSplit [url or keyword]
 
-###Open Local Html File###
+### Open Local Html File
+
     input :W3m local html-file-path
 
-###Close:###
-    input :W3mClose
+## Buffer specific functions
+
+This is the first change I've made to upstream
+The (standard) practice of uniform command prefixes seems over strict when
+applied to buffer local Commands, where the chance of overlap is small,
+and the default is sensibly to the buffer local Command.
+This make the commands considerably easier to type and more intuitive.
+
+### Close:
+
+    input :Close
     or
     input :bd
 
-###Copy URL To Clipboard:###
-    input :W3mCopyUrl
+###Copy URL To Clipboard
 
-###Reload Current Page:###
-    input :W3mReload
+    input :CopyUrl
 
-###Change Url:###
-    input :W3mAddressBar
+###Reload Current Page
 
-###Show External Browser:###
-    input :W3mShowExtenalBrowser
+    input :Reload
 
-###Syntax Off:###
-    input :W3mSyntaxOff
+###Change Url:
 
-###Syntax On:###
-    input :W3mSyntaxOn
+    input :AddressBar
 
-###Change User-Agent###
-    input :W3mSetUserAgent (w3m|Chrome|Firefox|IE6|IE7|IE8|IE9|Opera|Android|iOS|KDDI|DoCoMo|SoftBank)
+###Show External Browser:
 
-###Open from history:###
-    input :W3mHistory
+    input :ShowExtenalBrowser
+
+###Syntax Off:
+
+    input :SyntaxOff
+
+###Syntax On:
+
+    input :SyntaxOn
+
+###Change User-Agent
+
+    input :SetUserAgent (w3m|Chrome|Firefox|IE6|IE7|IE8|IE9|Opera|Android|iOS|KDDI|DoCoMo|SoftBank)
+
+###Open from history:
+
+    input :History
 
 ###Clear history:###
-    input :W3mHistoryClear
+
+    input :HistoryClear
 
 Settings
 --------
 
-###Highlight:###
+###Highlight:
+
     highlight! link w3mLink      Function
     highlight! link w3mLinkHover SpecialKey
     highlight! link w3mSubmit    Special
@@ -149,16 +174,19 @@ By default links under the curosr are highlighted. Turn off with one of the foll
     " set delay time until highlighting
     let g:w3m#hover_delay_time = 100
 
-###Search Engine Localization:###
+###Search Engine Localization
+
 Search engines are loaded from `autoload/w3m/search_engines/YOUR_LOCALE/`, and then from the "global" locale
 unless a localized search engine of the same name exists. Your locale defaults to `v:lang`, which vim sets
-based on your `$LANG` environment variable.
+based on your `$LANG` environment variable.`
 
 To specify a custom locale for loading search engines:
 
     let g:w3m#lang = 'en_US'
 
-###Specify path to history file:###
+
+###Specify path to history file
+
     let g:w3m#history#save_file = $HOME.'/.vim_w3m_hist'
 
 Default Keymaps
