@@ -5,7 +5,7 @@ Fork Note
 ---------
 The original has not been updated for 8 years.
 I've come to like the utility of an embedded vim browser.
-But this implementation, as sold as it is, is showing it's age.
+But this implementation, as old as it is, is showing it's age.
 
 Description
 -----------
@@ -112,7 +112,7 @@ This make the commands considerably easier to type and more intuitive.
 
     input :History
 
-### Clear history:###
+### Clear history:
 
     input :HistoryClear
 
@@ -163,7 +163,7 @@ You set as follows if you do not want to use vimproc.
 
     let g:w3m#disable_vimproc = 1
 
-### Toggle Link Hovering###
+### Toggle Link Hovering
 
 By default links under the curosr are highlighted. Turn off with one of the following
 
@@ -209,10 +209,10 @@ Default Keymaps
 ScreenShots
 -----------
 
-### Sample Image1###
+### Sample Image1
 ![sample1](http://yuratomo.up.seesaa.net/image/w3mvim_v0.4.0.001.png "sample1")
 
-### Hit-A-Hint###
+### Hit-A-Hint
 ![sample1](http://yuratomo.up.seesaa.net/image/w3mvim_v0.4.0.002.png "sample1")
 
 HISTORY
