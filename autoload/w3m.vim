@@ -995,7 +995,7 @@ endfunction
 
 function! s:tag_input_radio(tidx)
   redraw
-  " ‘¼‚Ì“¯‚¶name‚Ìechecked‚ğƒŠƒZƒbƒg
+  " Â‘Â¼Â‚ÃŒÂ“Â¯Â‚Â¶nameÂ‚ÃŒecheckedÂ‚Ã°ÂƒÂŠÂƒZÂƒbÂƒg
   for item in b:form_list
     if has_key(item.attr, 'type') && item.attr.type ==? 'radio'
       let item.edited = 1
@@ -1300,7 +1300,7 @@ function! w3m#HitAHintStart()
       break
     endif
   endfor
-  cnoremap <buffer> <CR> <CR>:call w3m#Click(0)<CR>:call w3m#HitAHintEnd()<CR>
+  cnoremap <buffer> <CR> <CR>:call w3m#Click(0,0)<CR>:call w3m#HitAHintEnd()<CR>
   cnoremap <buffer> <ESC> <ESC>:call w3m#HitAHintEnd()<CR>
   nnoremap <buffer> <ESC> <ESC>:call w3m#HitAHintEnd()<CR>
   call feedkeys('/@', 'n')
@@ -1386,17 +1386,17 @@ function! s:decordeEntRef(str)
   let str = substitute(str, '&quot;',   '"', 'g')
   let str = substitute(str, '&#40;',    '(', 'g')
   let str = substitute(str, '&#41;',    ')', 'g')
-  let str = substitute(str, '&laquo;',  'á', 'g')
-  let str = substitute(str, '&raquo;',  'â', 'g')
+  let str = substitute(str, '&laquo;',  'ÂÃ¡', 'g')
+  let str = substitute(str, '&raquo;',  'ÂÃ¢', 'g')
   let str = substitute(str, '&lt;',     '<', 'g')
   let str = substitute(str, '&gt;',     '>', 'g')
   let str = substitute(str, '&amp;',    '\&','g')
   let str = substitute(str, '&yen;',    '\\','g')
-  let str = substitute(str, '&cent;',   '‘','g')
+  let str = substitute(str, '&cent;',   'ÂÂ‘','g')
   let str = substitute(str, '&copy;',   'c', 'g')
-  let str = substitute(str, '&middot;', 'E','g')
-  let str = substitute(str, '&mdash;',  '\','g')
-  let str = substitute(str, '&ndash;',  '\','g')
+  let str = substitute(str, '&middot;', 'ÂE','g')
+  let str = substitute(str, '&mdash;',  'Â\','g')
+  let str = substitute(str, '&ndash;',  'Â\','g')
   let str = substitute(str, '&apos;',   "'", 'g')
   return    substitute(str, '&nbsp;',   ' ', 'g')
 endfunction
