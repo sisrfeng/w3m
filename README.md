@@ -1,6 +1,12 @@
 w3m.vim
 =======
 
+Fork Note
+---------
+The original has not been updated for 8 years.
+I've come to like the utility of an embedded vim browser.
+But this implementation, as sold as it is, is showing it's age.
+
 Description
 -----------
 w3m.vim is a plugin on vim for w3m that is a console web browser.
@@ -99,33 +105,41 @@ Settings
     highlight! link w3mHitAHint  Question
     highlight! link w3mAnchor    Label
 
-###Use Proxy:###
+###Use Proxy:
+
     let &HTTP_PROXY='http://xxx.xxx/:8080'
 
-###Set External Browser:###
+###Set External Browser:
+
     let g:w3m#external_browser = 'chrome'
 
-###Set Home Page:###
+###Set Home Page
+    
     let g:w3m#homepage = "http://www.google.co.jp/"
 
-###Specify Key Of Hit-A-Hint:###
+###Specify Key Of Hit-A-Hint
+
     let g:w3m#hit_a_hint_key = 'f'
 
-###Specify Default Search Engine:###
+###Specify Default Search Engine:
+
     let g:w3m#search_engine = 
         \ 'http://search.yahoo.co.jp/search?search.x=1&fr=top_ga1_sa_124&tid=top_ga1_sa_124&ei=' . &encoding . '&aq=&oq=&p='
 
-###Disable Default Keymap:###
+###Disable Default Keymap
+
 You set as follows if you do not want to use default keymap.
 
     let g:w3m#disable_default_keymap = 1
 
-###Disable Vimproc:###
+###Disable Vimproc
+
 You set as follows if you do not want to use vimproc.
 
     let g:w3m#disable_vimproc = 1
 
 ###Toggle Link Hovering###
+
 By default links under the curosr are highlighted. Turn off with one of the following
 
     unlet g:w3m#set_hover_on
