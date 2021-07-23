@@ -1400,8 +1400,8 @@ function! s:decordeEntRef(str)
   let str = substitute(str, '&mdash;',  '\','g')
   let str = substitute(str, '&ndash;',  '\','g')
   let str = substitute(str, '&apos;',   "'", 'g')
-  let str = substitute(str, '&#x2014;',   "-", 'g')
-  let str = substitute(str, '&#x203A;',   ">", 'g')
+  let str = substitute(str, '&#x2014;',   '-', 'g')
+  let str = substitute(str, '&#x203A;',   '>', 'g')
   return    substitute(str, '&nbsp;',   ' ', 'g')
 endfunction
 
