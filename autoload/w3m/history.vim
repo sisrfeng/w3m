@@ -1,5 +1,4 @@
 " File: autoload/w3m/history.vim
-" Last Modified: 2012.04.03
 " Author: yuratomo (twitter @yusetomo)
 
 let g:w3m#history#list = []

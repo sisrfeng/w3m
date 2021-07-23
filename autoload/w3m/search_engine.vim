@@ -1,5 +1,4 @@
 " File: autoload/w3m/search_engine.vim
-" Last Modified: 2012.03.25
 " Author: yuratomo (twitter @yusetomo)
 
 let s:loaded_search_engines = 0

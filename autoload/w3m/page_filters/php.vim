@@ -1,5 +1,4 @@
 " File: autoload/w3m/page_filters/php.vim
-" Last Modified: 2012.03.25
 " Version: 1.0.0
 " Author: yuratomo (twitter @yusetomo)
 

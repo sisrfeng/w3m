@@ -1,5 +1,4 @@
 " File: syntax/w3m.vim
-" Last Modified: 2012.04.03
 " Author: yuratomo (twitter @yusetomo)
 
 if version < 700

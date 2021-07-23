@@ -1,5 +1,4 @@
 " File: autoload/w3m/search_engines/msdn.vim
-" Last Modified: 2012.03.25
 " Version: 1.0.0
 " Author: yuratomo (twitter @yusetomo)
 

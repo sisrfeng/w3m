@@ -1,5 +1,4 @@
 " File: plugin/w3m.vim
-" Last Modified: 2012.05.05
 " Version: 1.2.0
 " Author: yuratomo (twitter @yusetomo)
 

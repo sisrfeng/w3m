@@ -1,5 +1,4 @@
 " File: autoload/w3m/search_engines/2ch.vim
-" Last Modified: 2012.03.30
 " Version: 1.0.0
 " Author: yuratomo (twitter @yusetomo)
 

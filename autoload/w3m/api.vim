@@ -1,5 +1,4 @@
 " File: autoload/w3m/api.vim
-" Last Modified: 2012.04.04
 " Author: yuratomo (twitter @yusetomo)
 
 function! w3m#api#getFormList()

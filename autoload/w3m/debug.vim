@@ -1,5 +1,4 @@
 " File: autoload/w3m/debug.vim
-" Last Modified: 2012.03.30
 " Author: yuratomo (twitter @yusetomo)
 
 function! w3m#debug#dump()

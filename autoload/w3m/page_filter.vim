@@ -1,5 +1,4 @@
 " File: autoload/w3m/page_filter.vim
-" Last Modified: 2012.03.25
 " Author: yuratomo (twitter @yusetomo)
 
 let s:loaded_page_filters = 0

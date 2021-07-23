@@ -1,5 +1,4 @@
 " File: autoload/w3m.vim
-" Last Modified: 2012.04.04
 " Author: yuratomo (twitter @yusetomo)
 
 let s:save_cpo = &cpo
