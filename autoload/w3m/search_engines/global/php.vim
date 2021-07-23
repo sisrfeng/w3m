@@ -3,7 +3,10 @@
 " Version: 1.0.0
 " Author: yuratomo (twitter @yusetomo)
 
-let s:engine = w3m#search_engine#Init('php', 'http://www.google.com/search?sitesearch=php.net/manual/en/&q=%s')
+let s:engine = w3m#search_engine#Init(
+            \ 'php',
+            \ 'https://www.google.com/search?sitesearch=php.net/manual/en/&q=%s'
+            \ )
 
 function! s:engine.preproc()
   let s:user_agent_backup = g:user_agent
