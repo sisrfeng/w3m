@@ -3,7 +3,10 @@
 " Version: 1.0.0
 " Author: yuratomo (twitter @yusetomo)
 
-let s:engine = w3m#search_engine#Init('man', 'http://www.google.com/search?sitesearch=linuxjm.sourceforge.com/html/&q=%s')
+let s:engine = w3m#search_engine#Init(
+            \ 'man',
+            \ 'http://www.google.com/search?sitesearch=https://www.kernel.org/doc/man-pages/&q=%s'
+            \ )
 
 function! s:engine.preproc()
   let s:user_agent_backup = g:user_agent
