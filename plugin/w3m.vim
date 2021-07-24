@@ -6,8 +6,8 @@ if exists('g:loaded_w3m') && g:loaded_w3m == 1
   finish
 endif
 
-let s:save_cpo = &cpo
-set cpo&vim
+let s:save_cpo = &cpoptions
+set cpoptions&vim
 
 let [g:w3m#OPEN_NORMAL,g:w3m#OPEN_SPLIT,g:w3m#OPEN_TAB,g:w3m#OPEN_VSPLIT] = range(4)
 
@@ -27,7 +27,7 @@ if !exists('g:w3m#lang')
   let g:w3m#lang = v:lang
 endif
 if !exists('g:w3m#search_engine')
-  if g:w3m#lang == 'ja_JP' || g:w3m#lang == 'ja'
+  if g:w3m#lang ==# 'ja_JP' || g:w3m#lang ==# 'ja'
     let g:w3m#search_engine = 'http://search.yahoo.co.jp/search?search.x=1&fr=top_ga1_sa_124&tid=top_ga1_sa_124&ei=' . &encoding . '&aq=&oq=&p=%s'
   else
     let g:w3m#search_engine = 'http://www.google.com/search?ie=' . &encoding . '&q=%s'
@@ -95,6 +95,7 @@ call add(g:w3m#user_agent_list, {'name':'SoftBank','agent':'SoftBank/1.0/911SH/S
 
 if !executable(g:w3m#command)
   echoerr "w3m is not exist!!"
+  echoerr "w3m is not installed!!"
   finish
 endif
 
@@ -107,6 +108,7 @@ command! -nargs=0 W3mHistory :call w3m#history#Show()
 command! -nargs=0 W3mHistoryClear :call w3m#history#Clear()
 
 let &cpo = s:save_cpo
+let &cpoptions = s:save_cpo
 unlet s:save_cpo
 
 let g:loaded_w3m = 1

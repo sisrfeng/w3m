@@ -1,0 +1,17 @@
+{
+    "autoload/w3m/search_engines/global/*.vim" : {
+        "type"      : "searchengine"
+    },
+    "autoload/w3m.vim" : {
+        "type"      : "main"
+    },
+    "doc/w3m.txt" : {
+        "type"      : "doc"
+    },
+    "plugin/w3m.vim" : {
+        "type"      : "plugin"
+    },
+    ".scratch/*.vim" : {
+        "type"      : "scratch"
+    }
+}
