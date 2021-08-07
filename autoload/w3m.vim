@@ -66,8 +66,7 @@ function! w3m#ShowUsage()
 endfunction
 
 function! w3m#ShowTitle()
-  let cols = winwidth(0) - &numberwidth
-
+  let cols = w3m#get_cols()
   " resolve title from cache
   if has_key(b:history[b:history_index], 'title') 
     call s:message( strpart(b:history[b:history_index].title, 0, cols - s:message_adjust) )
@@ -289,7 +288,7 @@ function! w3m#Open(mode, ...)
   endif
 
   "create command
-  let cols = winwidth(0) - &numberwidth
+  let cols = w3m#get_cols()
   let cmdline = s:create_command(url, cols)
   call s:message( strpart('open ' . url, 0, cols - s:message_adjust) )
 
@@ -1491,6 +1490,17 @@ function! s:is_tag_tabstop(tag)
     return 1
   endif
   return 0
+endfunction
+
+" Format to a more readable 80 columns by default
+function! w3m#get_cols() abort
+  let l:cols = winwidth(1) - &numberwidth
+  if ! exists('g:w3m#allow_long_lines')
+    if l:cols > 80
+      let l:cols = 80
+    endif
+  endif
+  return l:cols
 endfunction
 
 let &cpo = s:save_cpo
