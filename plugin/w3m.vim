@@ -93,12 +93,6 @@ call add(g:w3m#user_agent_list, {'name':'KDDI',    'agent':'KDDI-HI31 UP.Browser
 call add(g:w3m#user_agent_list, {'name':'DoCoMo',  'agent':'D502i	DoCoMo/1.0/D502i	DoCoMo/1.0/D502i/c10'})
 call add(g:w3m#user_agent_list, {'name':'SoftBank','agent':'SoftBank/1.0/911SH/SHJ001/XXXXXXXXXXXXXXXX Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1'})
 
-if !executable(g:w3m#command)
-  echoerr "w3m is not exist!!"
-  echoerr "w3m is not installed!!"
-  finish
-endif
-
 command! -nargs=* -complete=customlist,w3m#search_engine#List W3m :call w3m#Open(g:w3m#OPEN_NORMAL, <f-args>)
 command! -nargs=* -complete=customlist,w3m#search_engine#List W3mTab :call w3m#Open(g:w3m#OPEN_TAB, <f-args>)
 command! -nargs=* -complete=customlist,w3m#search_engine#List W3mSplit :call w3m#Open(g:w3m#OPEN_SPLIT, <f-args>)
