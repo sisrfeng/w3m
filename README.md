@@ -4,8 +4,30 @@ w3m.vim
 Fork Note
 ---------
 The original has not been updated for 8 years.
+It's a very solid w3m wrapper for vim.
+
 I've come to like the utility of an embedded vim browser.
 But this implementation, as old as it is, is showing it's age.
+
+I've done some basic improvements 
+
+* moving the README into a help file
+* implement (some) of the various bug fixes from other forks
+* moved W3m buffer specific mappings/commands to ``<buffer>`` local commands
+* some Markdown cleanup for this README
+* fixes for search engine mappings
+* added frogfind search, ``frog`` to compliment ``duck``. Frogfind specifically
+reformats results for text based browser (using a port of mozilla's Readability
+library).
+
+I've also made some more specific changes for my tastes:
+
+* limit word wrap to 80 characters for readability (with option to disable)
+* Changes to the W3m command namespace, adopting Tim Popes ``:V`` ``:T``
+convention. I've always found the finger combo of 1) shift-w followed by the
+reach of 3 harder than it needs to be to type in a command.
+
+Most of the rest of this doc is a cleaned up version of the original doc.
 
 Description
 -----------
@@ -188,6 +210,10 @@ To specify a custom locale for loading search engines:
 ### Specify path to history file
 
     let g:w3m#history#save_file = $HOME.'/.vim_w3m_hist'
+
+### Disable 80 column limit for line wrap
+
+    let g:w3m#allow_long_lines = 1
 
 Default Keymaps
 ---------------
