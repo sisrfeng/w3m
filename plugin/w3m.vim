@@ -14,6 +14,11 @@ let [g:w3m#OPEN_NORMAL,g:w3m#OPEN_SPLIT,g:w3m#OPEN_TAB,g:w3m#OPEN_VSPLIT] = rang
 if !exists('g:w3m#command')
   let g:w3m#command = 'w3m'
 endif
+if !executable(g:w3m#command)
+  echoerr 'w3m is not installed!!'
+  finish
+endif
+
 if !exists('g:w3m#option')
   let g:w3m#option = '-o display_charset=' . &encoding . ' -halfdump -o frame=true -o ext_halfdump=1 -o strict_iso2022=0 -o ucs_conv=1'
 endif
