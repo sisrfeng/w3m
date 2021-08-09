@@ -98,15 +98,14 @@ call add(g:w3m#user_agent_list, {'name':'KDDI',    'agent':'KDDI-HI31 UP.Browser
 call add(g:w3m#user_agent_list, {'name':'DoCoMo',  'agent':'D502i	DoCoMo/1.0/D502i	DoCoMo/1.0/D502i/c10'})
 call add(g:w3m#user_agent_list, {'name':'SoftBank','agent':'SoftBank/1.0/911SH/SHJ001/XXXXXXXXXXXXXXXX Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1'})
 
-command! -nargs=* -complete=customlist,w3m#search_engine#List W3m :call w3m#Open(g:w3m#OPEN_NORMAL, <f-args>)
-command! -nargs=* -complete=customlist,w3m#search_engine#List W3mTab :call w3m#Open(g:w3m#OPEN_TAB, <f-args>)
-command! -nargs=* -complete=customlist,w3m#search_engine#List W3mSplit :call w3m#Open(g:w3m#OPEN_SPLIT, <f-args>)
-command! -nargs=* -complete=customlist,w3m#search_engine#List W3mVSplit :call w3m#Open(g:w3m#OPEN_VSPLIT, <f-args>)
-command! -nargs=* -complete=file W3mLocal :call w3m#Open(g:w3m#OPEN_NORMAL, 'local', <f-args>)
-command! -nargs=0 W3mHistory :call w3m#history#Show()
-command! -nargs=0 W3mHistoryClear :call w3m#history#Clear()
+command! -nargs=* -complete=file LW3mLocal :call w3m#Open(g:w3m#OPEN_NORMAL, 'local', <f-args>)
+command! -nargs=* -complete=customlist,w3m#search_engine#List WW3m :call w3m#Open(g:w3m#OPEN_NORMAL, <f-args>)
+command! -nargs=* -complete=customlist,w3m#search_engine#List TW3m :call w3m#Open(g:w3m#OPEN_TAB, <f-args>)
+command! -nargs=* -complete=customlist,w3m#search_engine#List SW3m :call w3m#Open(g:w3m#OPEN_SPLIT, <f-args>)
+command! -nargs=* -complete=customlist,w3m#search_engine#List VW3m :call w3m#Open(g:w3m#OPEN_VSPLIT, <f-args>)
+command! -nargs=0 WW3mHistory :call w3m#history#Show()
+command! -nargs=0 WW3mHistoryClear :call w3m#history#Clear()
 
-let &cpo = s:save_cpo
 let &cpoptions = s:save_cpo
 unlet s:save_cpo
 
