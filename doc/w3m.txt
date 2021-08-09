@@ -4,9 +4,11 @@
 CONTENTS                            *W3mContents*
 
     1. Introduction.................|W3mIntro|
+    1. Requirements.................|W3mRequirements|
     2. Usage........................|W3mUsage|
     3. Buffer Commands..............|W3mBuffer|
     4. Settings.....................|W3mSettings|
+    5. Forking Notes................|W3mForkNotes|
 
 
 ================================================================================
@@ -15,10 +17,17 @@ CONTENTS                            *W3mContents*
 
 Description
 -----------
-w3m.vim is a plugin on vim for w3m that is a console web browser.
+w3m.vim is a plugin for vim that uses w3m to search in vim.
+The obvious use case is to integrate online search with your writing
+process. This avoids conceptual context switching, and allows vim copy
+and paste between search results and your documents.
 
-Requirements
-------------
+This version is forked from the original (and solid) plugin
+https://github.com/yuratomo/w3m.vim
+
+================================================================================
+2. REQUIREMENTS                                *W3mRequirements*
+
 w3m.vim requires [w3m](http://w3m.sourceforge.net/) to be installed.
 
 If w3m is not in your $PATH, you can specify its location in
@@ -26,14 +35,8 @@ your vimrc file.
 
     let g:w3m#command = 'C:\w3m.exe'
 
-Fork Note
----------
-The original has not been updated for 8 years.
-I've come to like the utility of an embedded vim browser.
-But this implementation, as old as it is, is showing it's age.
-
 ================================================================================
-2. USAGE                                       *W3mUsage*
+3. USAGE                                       *W3mUsage*
 
 Open URL:
 
@@ -41,7 +44,7 @@ Open URL:
 
 Search Mode:
 
-    input |:W3m| search-engine-name keyword
+    |:WW3m| search-engine-name search words
 
     [search-engine-name]
     alc              : space alc
@@ -64,22 +67,22 @@ Search Mode:
 
 Open URL At New Tab
 
-    input |:W3mTab| [url or keyword]
+    input |:TW3m| [url or keyword]
 
 Open URL At Split Window:
 
-    input |:W3mSplit| [url or keyword]
+    input |:SW3m| [url or keyword]
 
 Open URL At Vertical Split Window:
 
-    input |:W3mVSplit| [url or keyword]
+    input |:VW3m| [url or keyword]
 
 Open Local Html File
 
-    input |:W3m| local html-file-path
+    input |:W3mLocal| local html-file-path
 
 ================================================================================
-3. BUFFER COMMANDS                             *W3mBuffer*
+4. BUFFER COMMANDS                             *W3mBuffer*
 
 This is the first change I've made to upstream
 The (standard) practice of uniform command prefixes seems over strict when
@@ -131,10 +134,10 @@ Clear history:
 
 
 ================================================================================
-4. SETTINGS                                    *W3mSettings*
+5. SETTINGS                                    *W3mSettings*
 --------
 
-Highlight:
+Syntax highlighting:
 
     highlight! link w3mLink      Function
     highlight! link w3mLinkHover SpecialKey
@@ -204,6 +207,10 @@ Specify path to history file
 
     let g:w3m#history#save_file = $HOME.'/.vim_w3m_hist'
 
+Disable 80 char wrapping and wrap to window size
+
+    let g:w3m#allow_long_lines = 1
+
 Default Keymaps
 ---------------
 * <CR>      Open link under the cursor.
@@ -222,7 +229,33 @@ Default Keymaps
 * <M-D>     Edit current url.
 
 
-HISTORY
+6 FORKING NOTE                                     *W3mForkNotes*
+==============================================================================
+
+I've forked this from https://github.com/yuratomo/w3m.vim
+It's a really solid w3m wrapper (and seems heavily influenced by the
+emacs package). But it's showing it's age, without update for a decade.
+
+Basic fixes to original package:
+
+* This help doc!
+* cleanup of some of the search engine definitions
+* adding some minor fixes from other forks
+* add frogsearch (frog) and made it the default search
+* cleanup of readme
+
+But I've also modified behavior
+
+* I've capped columns to 80 for readability. This can be disabled if
+  desired.
+* I've altered the command naming. This is likely controversial, but not
+  unprecedented, using T/V/S prefixes on the W3m namespace. I'm
+  following Tim Popes precedent, so I believe I'm in good company :-)
+  This is in part to make the vertical split invocation easier to type,
+  and conceptually maps standard vim conventions. I am also motivated by
+  the awkwardness of the shifted W followed by the reach to 3, and
+  prefer to stay closer to home row. I personally tend to leveraging
+  <Tab> completion, which typically needs two characters to trigger, and
+  adding the prefix orientation makes that easier to type.
 -------
 
-Forked from https://github.com/yuratomo/w3m.vim
