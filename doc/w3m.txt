@@ -32,15 +32,15 @@ w3m.vim requires [w3m](http://w3m.sourceforge.net/) to be installed.
 
 If w3m is not in your $PATH, you can specify its location in
 your vimrc file.
-
+>
     let g:w3m#command = 'C:\w3m.exe'
-
+<
 ================================================================================
 3. USAGE                                       *W3mUsage*
 
 Open URL:
 
-    input :W3m [url or keyword]
+    :WW3m [url or keyword]
 
 Search Mode:
 
@@ -67,19 +67,19 @@ Search Mode:
 
 Open URL At New Tab
 
-    input |:TW3m| [url or keyword]
+    |:TW3m| [url or keyword]
 
 Open URL At Split Window:
 
-    input |:SW3m| [url or keyword]
+    |:SW3m| [url or keyword]
 
 Open URL At Vertical Split Window:
 
-    input |:VW3m| [url or keyword]
+    |:VW3m| [url or keyword]
 
 Open Local Html File
 
-    input |:W3mLocal| local html-file-path
+    |:W3mLocal| local html-file-path
 
 ================================================================================
 4. BUFFER COMMANDS                             *W3mBuffer*
@@ -92,45 +92,45 @@ This make the commands considerably easier to type and more intuitive.
 
 Close:
 
-    input :Close
+    :Close
     or
-    input :bd
+    :bd
 
 Copy URL To Clipboard
 
-    input :CopyUrl
+    :CopyUrl
 
 Reload Current Page
 
-    input :Reload
+    :Reload
 
 Change Url:
 
-    input :AddressBar
+    :AddressBar
 
 Show External Browser:
 
-    input :ShowExtenalBrowser
+    :ShowExtenalBrowser
 
 Syntax Off:
 
-    input :SyntaxOff
+    :SyntaxOff
 
 Syntax On:
 
-    input :SyntaxOn
+    :SyntaxOn
 
 Change User-Agent
 
-    input :SetUserAgent (w3m|Chrome|Firefox|IE6|IE7|IE8|IE9|Opera|Android|iOS|KDDI|DoCoMo|SoftBank)
+    :SetUserAgent (w3m|Chrome|Firefox|IE6|IE7|IE8|IE9|Opera|Android|iOS|KDDI|DoCoMo|SoftBank)
 
 Open from history:
 
-    input :History
+    :History
 
 Clear history:
 
-    input :HistoryClear
+    :HistoryClear
 
 
 ================================================================================
@@ -138,7 +138,7 @@ Clear history:
 --------
 
 Syntax highlighting:
-
+>
     highlight! link w3mLink      Function
     highlight! link w3mLinkHover SpecialKey
     highlight! link w3mSubmit    Special
@@ -147,15 +147,15 @@ Syntax highlighting:
     highlight! link w3mUnderline Underlined
     highlight! link w3mHitAHint  Question
     highlight! link w3mAnchor    Label
-
+<
 Use Proxy:
-
+>
     let &HTTP_PROXY='http://xxx.xxx/:8080'
-
+<
 Set External Browser:
-
+>
     let g:w3m#external_browser = 'chrome'
-
+<
 Set Home Page
     >
     let g:w3m#homepage = "http://www.google.co.jp/"
