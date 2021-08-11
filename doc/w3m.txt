@@ -1,4 +1,4 @@
-*w3m.vim* Embed a text based browser in a vim buffer
+*w3m.vim* Embed w3m text browser in a vim buffer
 
 ================================================================================
 CONTENTS                            *W3mContents*
@@ -15,7 +15,7 @@ CONTENTS                            *W3mContents*
 1. INTRODUCTION                                *W3mIntro*
 
 
-Description
+Description~
 -----------
 w3m.vim is a plugin for vim that uses w3m to search in vim.
 The obvious use case is to integrate online search with your writing
@@ -157,60 +157,61 @@ Set External Browser:
     let g:w3m#external_browser = 'chrome'
 
 Set Home Page
-    
+    >
     let g:w3m#homepage = "http://www.google.co.jp/"
-
+<
 Specify Key Of Hit-A-Hint
-
+>
     let g:w3m#hit_a_hint_key = 'f'
-
+<
 Specify Default Search Engine:
-
+    >
     let g:w3m#search_engine = 
         \ 'http://search.yahoo.co.jp/search?search.x=1&fr=top_ga1_sa_124&tid=top_ga1_sa_124&ei=' . &encoding . '&aq=&oq=&p='
-
+<
 Disable Default Keymap
 
 You set as follows if you do not want to use default keymap.
-
+>
     let g:w3m#disable_default_keymap = 1
-
+<
 Disable Vimproc
 
 You set as follows if you do not want to use vimproc.
-
+>
     let g:w3m#disable_vimproc = 1
-
+<
 Toggle Link Hovering
 
 By default links under the curosr are highlighted. Turn off with one of the following
-
+>
     unlet g:w3m#set_hover_on
     let g:w3m#hover_set_on = -1 
     " a value less than or equal to 0 will turn it off
 
     " set delay time until highlighting
     let g:w3m#hover_delay_time = 100
-
+>
 Search Engine Localization
 
-Search engines are loaded from `autoload/w3m/search_engines/YOUR_LOCALE/`, and then from the "global" locale
-unless a localized search engine of the same name exists. Your locale defaults to `v:lang`, which vim sets
-based on your `$LANG` environment variable.`
+Search engines are loaded from `autoload/w3m/search_engines/YOUR_LOCALE/`, and
+then from the "global" locale unless a localized search engine of the same
+name exists. Your locale defaults to `v:lang`, which vim sets based on your
+`$LANG` environment variable.`
 
 To specify a custom locale for loading search engines:
-
+>
     let g:w3m#lang = 'en_US'
-
+<
 
 Specify path to history file
-
+>
     let g:w3m#history#save_file = $HOME.'/.vim_w3m_hist'
-
+<
 Disable 80 char wrapping and wrap to window size
-
+>
     let g:w3m#allow_long_lines = 1
-
+<
 Default Keymaps
 ---------------
 * <CR>      Open link under the cursor.
@@ -259,3 +260,4 @@ But I've also modified behavior
   adding the prefix orientation makes that easier to type.
 -------
 
+vim:tw=78:ts=8:ft=help:norl:
