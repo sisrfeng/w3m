@@ -18,4 +18,12 @@ command! -buffer -nargs=* History                                             : 
 
 nno <buffer>  gl  :silent! call setreg("+", b:last_url)<cr>:echo @+<cr>
 
+" 不太行:
+    setl modifiable
+    setl buftype=acwrite
+
+    
+nno <buffer> <silent> <M-p> <cmd>setl modifiable<cr><Cmd>call Split_line()<cr>
+
+
 

@@ -10,11 +10,11 @@ let s:save_cpo = &cpoptions
 set cpoptions&vim
 
 let [
-  \g:w3m#OPEN_NORMAL,
-  \g:w3m#OPEN_SPLIT,
-  \g:w3m#OPEN_TAB,
-  \g:w3m#OPEN_VSPLIT
-  \] = range(4)
+      \g:w3m#OPEN_NORMAL,
+      \g:w3m#OPEN_SPLIT,
+      \g:w3m#OPEN_TAB,
+      \g:w3m#OPEN_VSPLIT
+      \] = range(4)
 
 if !exists('g:w3m#command')
     let g:w3m#command = 'w3m'
